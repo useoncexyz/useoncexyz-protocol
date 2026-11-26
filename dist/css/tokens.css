@@ -1,0 +1,39 @@
+/* TOKENS: the only file in the project that holds colour literals.
+   Every value below was sampled from a supplied asset, never invented.
+   Provenance:
+   - brand/LOGO ONCE PNG.png (RGBA, colortype 6, fully opaque, 2000x2000)
+       ink      = most frequent pixel with R<60            -> #181613
+       surface  = most frequent pixel overall (94.5%)      -> #F6F4EF
+   - reference/ONCE 1.jpg.jpeg (1600x900, 5x5 pixel mean at the stated point)
+       cream    = top mode of the whole frame              -> #FBF4ED
+       warm     = (30,500)                                 -> #F0EAE0
+       silver   = (600,700)                                -> #DFD9CF
+       deep     = (1400,860)                               -> #79726B
+       pedestal = (1100,758)                               -> #0F0C09
+       glow     = (1250,640)                               -> #FEFEF7
+   Transparent logo (brand/LOGO ONCE PNG...png) carries 3,770,264 pure-black
+   transparent pixels, so every resize of it is premultiplied (scripts/build.mjs). */
+:root {
+  --color-ink: #181613;
+  --color-surface: #F6F4EF;
+  --color-cream: #FBF4ED;
+  --color-warm: #F0EAE0;
+  --color-silver: #DFD9CF;
+  --color-silver-deep: #79726B;
+  --color-pedestal: #0F0C09;
+  --color-glow: #FEFEF7;
+
+  --color-accent: var(--color-silver-deep);
+  --color-rule: color-mix(in srgb, var(--color-ink) 14%, transparent);
+  --color-rule-strong: color-mix(in srgb, var(--color-ink) 28%, transparent);
+  --color-ink-muted: color-mix(in srgb, var(--color-ink) 68%, var(--color-surface));
+  --color-ink-meta: color-mix(in srgb, var(--color-ink) 52%, var(--color-surface));
+  --color-sunk: color-mix(in srgb, var(--color-warm) 70%, var(--color-surface));
+  --color-raised: var(--color-cream);
+
+  /* spacing scale (reference: 8/16/24/32/40/48/64/96) */
+  --spacing-8: 8px; --spacing-16: 16px; --spacing-24: 24px; --spacing-32: 32px;
+  --spacing-40: 40px; --spacing-48: 48px; --spacing-64: 64px; --spacing-96: 96px;
+  /* radii (reference: 3/4/6/8/10/12/full) */
+  --radius-4: 4px; --radius-6: 6px; --radius-8: 8px; --radius-12: 12px; --radius-full: 999px;
+}

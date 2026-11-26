@@ -1,0 +1,16 @@
+{
+  "name": "once",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Once: a single calm board for Solana.",
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "prove": "node scripts/prove.mjs",
+    "serve": "node scripts/serve.mjs"
+  },
+  "devDependencies": {
+    "pngjs": "^7.0.0"
+  },
+  "license": "MIT"
+}
